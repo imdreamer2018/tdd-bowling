@@ -18,6 +18,8 @@ public class BowlingGame {
                         scoreOfKnockingDownTheBall.get(i + 1) +
                         scoreOfKnockingDownTheBall.get(i + 2));
                 currentFrame++;
+            } else if (scoreOfKnockingDownTheBall.get(i) + scoreOfKnockingDownTheBall.get(i + 1) > 10) {
+                throw new InvalidInputException("score more than 10 points in twice hit");
             } else if (scoreOfKnockingDownTheBall.get(i) + scoreOfKnockingDownTheBall.get(i + 1) == 10) {
                 totalScore += (10 + scoreOfKnockingDownTheBall.get(i + 2));
                 currentFrame++;
