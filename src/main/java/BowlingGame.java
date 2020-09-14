@@ -10,16 +10,20 @@ public class BowlingGame {
                 break;
             }
             if (scoreOfKnockingDownTheBall.get(i) == 10) {
-                totalScore += (scoreOfKnockingDownTheBall.get(i) +
+                totalScore += (10 +
                         scoreOfKnockingDownTheBall.get(i + 1) +
                         scoreOfKnockingDownTheBall.get(i + 2));
                 currentFrame++;
+            } else if (scoreOfKnockingDownTheBall.get(i) + scoreOfKnockingDownTheBall.get(i + 1) == 10) {
+                totalScore += (10 + scoreOfKnockingDownTheBall.get(i + 2));
+                currentFrame++;
+                i++;
+            } else {
+                totalScore += (scoreOfKnockingDownTheBall.get(i) + scoreOfKnockingDownTheBall.get(i + 1));
+                i++;
+                currentFrame++;
             }
-            totalScore += (scoreOfKnockingDownTheBall.get(i) + scoreOfKnockingDownTheBall.get(i + 1));
-            i++;
-            currentFrame++;
         }
-
         return totalScore;
     }
 }
