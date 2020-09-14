@@ -1,3 +1,5 @@
+import exception.InvalidInputException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -53,5 +55,18 @@ public class BowlingGameTest {
         int result = bowlingGame.calculateTotalScore(scoreOfKnockingDownTheBall);
 
         assertEquals(137, result);
+    }
+
+    @Test
+    void should_throw_invalid_input_exception_when_score_more_than_10_in_once_hit() {
+
+        BowlingGame bowlingGame = new BowlingGame();
+
+        List<Integer> scoreOfKnockingDownTheBall = Arrays.asList(4,6,11,4,6,4,3,4,6,4,4,2,4,6,4,6,4,6,4,6);
+
+        Assertions.assertThrows(InvalidInputException.class, () -> {
+            bowlingGame.calculateTotalScore(scoreOfKnockingDownTheBall);
+        });
+
     }
 }

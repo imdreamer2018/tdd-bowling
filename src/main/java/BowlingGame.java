@@ -11,7 +11,9 @@ public class BowlingGame {
             if (currentFrame == 10) {
                 break;
             }
-            if (scoreOfKnockingDownTheBall.get(i) == 10) {
+            if (scoreOfKnockingDownTheBall.get(i) > 10) {
+                throw new InvalidInputException("score more than 10 points in once hit");
+            } else if (scoreOfKnockingDownTheBall.get(i) == 10) {
                 totalScore += (10 +
                         scoreOfKnockingDownTheBall.get(i + 1) +
                         scoreOfKnockingDownTheBall.get(i + 2));
