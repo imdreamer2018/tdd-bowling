@@ -42,4 +42,16 @@ public class BowlingGameTest {
 
         assertEquals(140, result);
     }
+
+    @Test
+    void should_return_correct_score_when_in_the_mixture_above_three_situation_tests() {
+
+        BowlingGame bowlingGame = new BowlingGame();
+
+        List<Integer> scoreOfKnockingDownTheBall = Arrays.asList(4,6,10,4,6,4,3,4,6,4,4,2,4,6,4,6,4,6,4,6);
+
+        int result = bowlingGame.calculateTotalScore(scoreOfKnockingDownTheBall);
+
+        assertEquals(137, result);
+    }
 }
