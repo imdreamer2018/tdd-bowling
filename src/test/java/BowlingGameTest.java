@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BowlingGameTest {
 
     @Test
-    void should_return_current_score_for_knocking_down_the_ball_when_failed_twice() {
+    void should_return_current_score_when_not_hit_all_ball_use_twice() {
 
         BowlingGame bowlingGame = new BowlingGame();
 
@@ -17,5 +17,17 @@ public class BowlingGameTest {
         int result = bowlingGame.calculateTotalScore(scoreOfKnockingDownTheBall);
 
         assertEquals(20, result);
+    }
+
+    @Test
+    void should_return_current_score_plus_last_two_scores_when_hit_all_ball_use_once() {
+
+        BowlingGame bowlingGame = new BowlingGame();
+
+        List<Integer> scoreOfKnockingDownTheBall = Arrays.asList(10,10,10,10,10,10,10,10,10,10,10,10);
+
+        int result = bowlingGame.calculateTotalScore(scoreOfKnockingDownTheBall);
+
+        assertEquals(300, result);
     }
 }
