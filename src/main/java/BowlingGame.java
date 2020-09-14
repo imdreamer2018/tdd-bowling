@@ -14,7 +14,7 @@ public class BowlingGame {
                 break;
             }
 
-            if (i + 1 >= scoreOfKnockingDownTheBall.size() || i + 2 >= scoreOfKnockingDownTheBall.size()) {
+            if (i + 1 > scoreOfKnockingDownTheBall.size() || i + 2 > scoreOfKnockingDownTheBall.size()) {
                 throw new InvalidInputException("the times of rounds less than 10");
             }
 
